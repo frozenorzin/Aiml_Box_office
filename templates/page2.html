@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css2.css') }}">
+</head>
+<body>
+    <h2 style="text-align: center;">Movie Prediction Options</h2>
+
+    <!-- Buttons for prediction options -->
+    <div class="button-container" style="text-align: center; margin-bottom: 20px;">
+        <button id="predictWinBtn">Predict Win</button>
+        <button id="predictGrossBtn">Predict Gross</button>
+    </div>
+
+    <!-- Form for input -->
+    <form id="movieForm" style="display: none; margin: 0 auto; max-width: 400px;">
+        <label for="actor_name">Actor Name</label>
+        <input 
+            type="text" 
+            id="actor_name" 
+            name="actor_name" 
+            placeholder="Enter actor's name" 
+            required 
+            style="width: 100%; margin-bottom: 10px;">
+
+        <label for="genre">Genre</label>
+        <select 
+            id="genre" 
+            name="genre" 
+            required 
+            style="width: 100%; margin-bottom: 10px;">
+            <option value="" disabled selected>Select Genre</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Thriller">Thriller</option>
+        </select>
+
+        <label for="budget">Budget (INR)</label>
+        <input 
+            type="number" 
+            id="budget" 
+            name="budget" 
+            min="1" 
+            placeholder="Enter budget in INR" 
+            required 
+            style="width: 100%; margin-bottom: 10px;">
+
+        <label for="director">Director</label>
+        <input 
+            type="text" 
+            id="director" 
+            name="director" 
+            placeholder="Enter director's name" 
+            required 
+            style="width: 100%; margin-bottom: 10px;">
+
+        <label for="production_house">Production House</label>
+        <input 
+            type="text" 
+            id="production_house" 
+            name="production_house" 
+            placeholder="Enter production house name" 
+            required 
+            style="width: 100%; margin-bottom: 10px;">
+
+        <button type="submit" style="width: 100%;">Submit</button>
+    </form>
+
+    <!-- Response div -->
+    <div 
+        id="response" 
+        style="display: none; margin-top: 20px; text-align: center; font-weight: bold; color: #333;">
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+</body>
+</html>
